@@ -1,0 +1,36 @@
+<h3>{{page}}</h3>
+
+<form class="col s12" ng-submit="submitForm()">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="cim" type="text" ng-model="formData.cim">
+            <label for="cim">Cím</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="leiras" ng-model="formData.leiras" class="materialize-textarea"></textarea>
+            <label for="leiras">Leírás</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="rendezo" type="text" ng-model="formData.rendezo">
+            <label for="rendezo">Rendező</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="mufaj" ng-model="formData.mufajId" material-select watch convert-to-number>
+                <option value="" disabled selected>Válassz...</option>
+                <option ng-repeat="item in listData" value="{{item.id}}">{{item.nev}}</option>
+            </select>
+            <label for="mufaj">Műfaj</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <button class="btn waves-effect waves-light col s12" type="submit" name="action">Mehet</button>
+        </div>
+    </div>
+</form>

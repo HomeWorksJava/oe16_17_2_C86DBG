@@ -1,0 +1,52 @@
+<h3>{{page}}</h3>
+
+<form class="col s12" ng-submit="submitForm()">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="nev" type="text" ng-model="formData.nev">
+            <label for="nev">Név</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="leiras" ng-model="formData.leiras" class="materialize-textarea"></textarea>
+            <label for="leiras">Leírás</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="jellem" type="text" ng-model="formData.jellem">
+            <label for="jellem">Jellem</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="eletkor" type="number" min="1" max="100" step="1" ng-model="formData.eletkor">
+            <label for="eletkor">Életkor</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="nem" ng-model="formData.nem" material-select watch>
+                <option value="" disabled selected>Válassz...</option>
+                <option value="Férfi">Férfi</option>
+                <option value="Nő">Nő</option>
+            </select>
+            <label for="nem">Nem</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="film" ng-model="formData.filmId" material-select watch convert-to-number>
+                <option value="" disabled selected>Válassz...</option>
+                <option ng-repeat="item in listData" value="{{item.id}}">{{item.cim}}</option>
+            </select>
+            <label for="film">Film</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <button class="btn waves-effect waves-light col s12" type="submit" name="action">Mehet</button>
+        </div>
+    </div>
+</form>

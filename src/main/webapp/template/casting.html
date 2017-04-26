@@ -1,0 +1,62 @@
+<h3>{{page}}</h3>
+
+<form class="col s12" ng-submit="submitForm()">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="nev" type="text" ng-model="formData.nev">
+            <label for="nev">Név</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="leiras" ng-model="formData.leiras" class="materialize-textarea"></textarea>
+            <label for="leiras">Leírás</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="helyszin" type="text" ng-model="formData.helyszin">
+            <label for="helyszin">Helyszín</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="ferohely" type="number" min="1" max="100" step="1" ng-model="formData.ferohely">
+            <label for="ferohely">Férőhely</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input input-date type="text" id="datum_start" ng-model="formData.datumStart" container="" format="yyyy-mm-dd" months-full="{{month}}" months-short="{{monthShort}}" weekdays-full="{{weekdaysFull}}" weekdays-short="{{weekdaysLetter}}" weekdays-letter="{{weekdaysLetter}}" min="{{minDate}}" max="{{maxDate}}" today="today" first-day="1" clear="clear" close="close" />
+            <label for="datum_start">Dátum (kezdés)</label>
+        </div>
+        <div class="input-field col s6">
+            <input data-twelvehour="false" type="text" input-clock ng-model="formData.idopontStart" id="idopont_start">
+            <label for="idopont_start">Időpont (kezdés)</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input input-date type="text" id="datum_veg" ng-model="formData.datumVeg" container="" format="yyyy-mm-dd" months-full="{{month}}" months-short="{{monthShort}}" weekdays-full="{{weekdaysFull}}" weekdays-short="{{weekdaysLetter}}" weekdays-letter="{{weekdaysLetter}}" min="{{minDate}}" max="{{maxDate}}" today="today" first-day="1" clear="clear" close="close" />
+            <label for="datum_veg">Dátum (vég)</label>
+        </div>
+        <div class="input-field col s6">
+            <input data-twelvehour="false" type="text" input-clock ng-model="formData.idopontVeg" id="idopont_veg">
+            <label for="idopont_veg">Időpont (vég)</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="film" ng-model="formData.filmId" material-select watch convert-to-number>
+                <option value="" disabled selected>Válassz...</option>
+                <option ng-repeat="item in listData" value="{{item.id}}">{{item.cim}}</option>
+            </select>
+            <label for="film">Film</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <button class="btn waves-effect waves-light col s12" type="submit" name="action">Mehet</button>
+        </div>
+    </div>
+</form>

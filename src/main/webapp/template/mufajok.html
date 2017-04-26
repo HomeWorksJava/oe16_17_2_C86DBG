@@ -1,0 +1,17 @@
+<div class="row">
+
+    <h3>Műfajok <a href="mufaj/uj" class="right btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
+
+    <div class="col s12 m6" ng-repeat="item in listData">
+        <div class="card waves-effect waves-block waves-light hoverable">
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{item.nev}}</span>
+            </div>
+            <div class="card-action">
+                <a ng-href="mufaj/modosit/{{item.id}}" class="waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Módosítás</a>
+                <button ng-click="deleteObject(item.id)" class="waves-effect waves-light btn red"><i class="material-icons left">delete</i>Törlés</button>
+            </div>
+        </div>
+    </div>
+
+</div>
